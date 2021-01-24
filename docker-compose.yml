@@ -1,8 +1,8 @@
 db1:
    ports:
-   - '6603:3306'
+   - 6603:3306
    volumes:
-   - '/opt/dockerdemo/getting-started-docker-mysql-nodejs/mysql-microservice/data:/var/lib/mysql'
+   - /root/dockertest/mysql/mysql-service/data:/var/lib/mysql'
    image: test-sql
 nodejs1:
    ports:
