@@ -1,10 +1,11 @@
-db1:
+mysqldb:
    ports:
    - 6603:3306
    volumes:
-   - /root/dockertest/mysql/mysql-service/data:/var/lib/mysql'
-   image: test-sql
-nodejs1:
+   - /root/jan2020/dockertest/mysql/leebhovi0806/mysql-serv/data:/var/lib/mysql'
+   image: leebhovi0806/mysql-serv
+   container_name: mysqldb
+nodeserv:
    ports:
    - 4000:4000
    environment:
@@ -13,5 +14,6 @@ nodejs1:
    - MYSQL_DATABASE=test
    - MYSQL_HOST=172.17.0.5
    links:
-   - db1
-   image: leebhovi0806/nodejs:latest
+   - mysqldb
+   image: leebhovi0806/nodejs-serv
+   container_name: nodeserv
