@@ -2,7 +2,7 @@
 FROM mysql:5.7
 
 ## The maintainer name and email
-MAINTAINER leel
+MAINTAINER admin
 
 # database = test and password for root = password
 ENV MYSQL_DATABASE=test \
