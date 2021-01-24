@@ -6,7 +6,7 @@ db1:
    image: test-sql
 nodejs1:
    ports:
-   - '4000:4000'
+   - 4000:4000
    environment:
    - MYSQL_USER=root
    - MYSQL_PASSWORD=password
