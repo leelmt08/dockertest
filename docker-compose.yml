@@ -1,0 +1,17 @@
+db1:
+   ports:
+   - '6603:3306'
+   volumes:
+   - '/opt/dockerdemo/getting-started-docker-mysql-nodejs/mysql-microservice/data:/var/lib/mysql'
+   image: test-sql
+nodejs1:
+   ports:
+   - '4000:4000'
+   environment:
+   - MYSQL_USER=root
+   - MYSQL_PASSWORD=password
+   - MYSQL_DATABASE=test
+   - MYSQL_HOST=172.17.0.5
+   links:
+   - db1
+   image: test-nodejs
